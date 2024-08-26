@@ -10,9 +10,9 @@ import java.time.LocalDateTime
 abstract class BaseEntity {
     @CreatedDate //시간자동생성
     @Column(nullable = false, updatable = false)
-    var createdDate: LocalDateTime = LocalDateTime.now()
+    var createdDateTime: LocalDateTime = LocalDateTime.now()
 
     @LastModifiedDate //수정된 시간
-    @Column(nullable = false, updatable = true)
-    var updatedDate: LocalDateTime = LocalDateTime.now()
+    @Column(nullable = false)
+    var updatedDateTime: LocalDateTime = LocalDateTime.now()
 }

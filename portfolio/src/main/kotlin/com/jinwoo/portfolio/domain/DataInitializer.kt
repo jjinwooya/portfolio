@@ -7,12 +7,11 @@ import jakarta.annotation.PostConstruct
 import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Component
 import java.time.LocalDate
-import java.time.LocalDateTime
 
 @Component
 @Profile(value = ["default"])
-class DataInitial(
-    private val achivementRepository: AchivementRepository,
+class DataInitializer(
+    private val achievementRepository: AchievementRepository ,
     private val introductionRepository: IntroductionRepository,
     private val linkRepository: LinkRepository,
     private val skillRepository: SkillRepository,
@@ -23,25 +22,25 @@ class DataInitial(
     @PostConstruct
     fun initializeData() {
         println("스프링실행 테스트 데이터를 초기화")
-        val achievements = mutableListOf<Achivement>(
-            Achivement(
+        val achievements = mutableListOf<Achievement>(
+            Achievement(
                 title = "2024년 10월 전에",
                 description = "개발자로 취업",
                 host = "최진우",
-                achivedDate = LocalDate.of(2024, 9, 10),
+                achievedDate = LocalDate.of(2024, 9, 10),
                 isActive = true
 
             ),
-            Achivement(
+            Achievement(
                 title = "취업함",
                 description = "개발자",
                 host = "최진우",
-                achivedDate = LocalDate.of(2024, 9, 10),
+                achievedDate = LocalDate.of(2024, 9, 10),
                 isActive = true
 
             )
         )
-        achivementRepository.saveAll(achievements)
+        achievementRepository.saveAll(achievements)
 
         val introductions = mutableListOf<Introduction>(
             Introduction(content = "끊임없이 성장하는 사람", isActive = true),

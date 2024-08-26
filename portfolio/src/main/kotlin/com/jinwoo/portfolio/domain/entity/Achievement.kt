@@ -4,19 +4,19 @@ import jakarta.persistence.*
 import java.time.LocalDate
 
 @Entity
-class Achivement(title:String,
-    description: String,
-    achivedDate: LocalDate?,
-    host: String,
-    isActive: Boolean
+class Achievement(title:String,
+                  description: String,
+                  achievedDate: LocalDate?,
+                  host: String,
+                  isActive: Boolean
     ) : BaseEntity() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "achivement_id")
+    @Column(name = "achievement_id")
     var id: Long? = null
     var title: String = title
     var description: String = description
-    var achivedDate: LocalDate? = achivedDate
+    var achievedDate: LocalDate? = achievedDate
     var host: String = host
     var isActive: Boolean = isActive
 }

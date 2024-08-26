@@ -6,6 +6,6 @@ import java.util.*
 
 interface ProjectSkillRepository : JpaRepository<ProjectSkill,Long>{
 
-    fun findByProjectId(projectId:Long, skillId: Long): Optional<ProjectSkill>
+    fun findByProjectIdAndSkillId(projectId:Long, skillId: Long): Optional<ProjectSkill>
 
 }
