@@ -5,5 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 interface ExperienceRepository : JpaRepository<Experience,Long>{
 
+    fun findAllByIsActive(active: Boolean): List<Experience>
+
 
 }

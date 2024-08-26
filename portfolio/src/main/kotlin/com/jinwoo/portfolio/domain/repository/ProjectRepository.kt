@@ -5,5 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 interface ProjectRepository : JpaRepository<Project,Long>{
 
+    fun findAllByIsActive(active: Boolean): List<Project>
 
+    //override fun findById(id: Long): Optional<Project>
 }
