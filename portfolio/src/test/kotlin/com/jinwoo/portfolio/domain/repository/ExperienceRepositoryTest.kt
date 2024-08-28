@@ -78,4 +78,11 @@ class ExperienceRepositoryTest(
 
         println("findallby 테스트 종료")
     }
+/*
+    @Test
+    fun test2(){
+        val findId= experienceRepository.findById(1)
+        println(findId.isPresent)
+    }*/
+
 }
