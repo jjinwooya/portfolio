@@ -43,15 +43,15 @@ class DataInitializer(
         achievementRepository.saveAll(achievements)
 
         val introductions = mutableListOf<Introduction>(
-            Introduction(content = "끊임없이 성장하는 사람", isActive = true),
-            Introduction(content = "모든 일은 결국 사람이 한다", isActive = true),
-            Introduction(content = "그렇기에 인성이 밑바탕이 된다", isActive = true)
+            Introduction(content = "꾸준하게 성장하는 사람이고", isActive = true),
+            Introduction(content = "감사하는 마음을 가진 사람이며", isActive = true),
+            Introduction(content = "감사함을 베풀 줄 아는 사람입니다.", isActive = true)
         )
 
         introductionRepository.saveAll(introductions)
 
         val links = mutableListOf<Link>(
-            Link(name = "github", content = "https://naver.com", isActive = true)
+            Link(name = "github", content = "https://github.com/jjinwooya", isActive = true)
         )
 
         linkRepository.saveAll(links)
