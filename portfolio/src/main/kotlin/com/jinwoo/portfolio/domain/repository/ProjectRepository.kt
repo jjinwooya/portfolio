@@ -5,14 +5,13 @@ import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import java.util.*
 
-interface ProjectRepository : JpaRepository<Project,Long>{
-
+interface ProjectRepository : JpaRepository<Project, Long> {
 
 
     //override fun findById(id: Long): Optional<Project>
 
     @Query("select p from Project p left join fetch p.skills s left join fetch s.skill where p.isActive = :isActive")
-    fun findAllByIsActive(isActive:Boolean): List<Project>
+    fun findAllByIsActive(isActive: Boolean): List<Project>
 
 
     @Query("select p from Project p left join fetch p.details where p.id = :id")

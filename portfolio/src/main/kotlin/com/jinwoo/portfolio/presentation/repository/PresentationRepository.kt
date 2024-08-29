@@ -13,30 +13,29 @@ class PresentationRepository(
     private val projectRepository: ProjectRepository,
     private val experienceRepository: ExperienceRepository
 ) {
-    fun getActiveAchievements() : List<Achievement> {
-        return  achievementRepository.findAllByIsActive(true)
+    fun getActiveAchievements(): List<Achievement> {
+        return achievementRepository.findAllByIsActive(true)
     }
 
-    fun getActiveExperience() : List<Experience> {
-        return  experienceRepository.findAllByIsActive(true)
+    fun getActiveExperience(): List<Experience> {
+        return experienceRepository.findAllByIsActive(true)
     }
 
-    fun getActiveIntroductions() : List<Introduction> {
-        return  introductionRepository.findAllByIsActive(true)
+    fun getActiveIntroductions(): List<Introduction> {
+        return introductionRepository.findAllByIsActive(true)
     }
 
-    fun getActiveLinks() : List<Link> {
-        return  linkRepository.findAllByIsActive(true)
+    fun getActiveLinks(): List<Link> {
+        return linkRepository.findAllByIsActive(true)
     }
 
-    fun getActiveProjects() : List<Project> {
-        return  projectRepository.findAllByIsActive(true)
+    fun getActiveProjects(): List<Project> {
+        return projectRepository.findAllByIsActive(true)
     }
 
-    fun getActiveSkills() : List<Skill> {
-        return  skillRepository.findAllByIsActive(true)
+    fun getActiveSkills(): List<Skill> {
+        return skillRepository.findAllByIsActive(true)
     }
-
 
 
 }

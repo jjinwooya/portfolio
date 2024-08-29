@@ -4,8 +4,8 @@ import jakarta.persistence.*
 
 @Entity
 class Introduction(
-    content : String,
-    isActive : Boolean
+    content: String,
+    isActive: Boolean
 ) : BaseEntity() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

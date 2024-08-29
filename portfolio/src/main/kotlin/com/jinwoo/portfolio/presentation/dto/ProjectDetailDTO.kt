@@ -3,8 +3,8 @@ package com.jinwoo.portfolio.presentation.dto
 import com.jinwoo.portfolio.domain.entity.ProjectDetail
 
 class ProjectDetailDTO(
-    val content : String,
-    val url : String?
+    val content: String,
+    val url: String?
 
 ) {
     constructor(projectDetail: ProjectDetail) : this(

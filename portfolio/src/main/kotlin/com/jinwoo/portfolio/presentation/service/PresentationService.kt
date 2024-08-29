@@ -20,13 +20,13 @@ class PresentationService(
     }
 
     @Transactional(readOnly = true)
-    fun getLinks() : List<LinkDTO> {
+    fun getLinks(): List<LinkDTO> {
         val links = presentationRepository.getActiveLinks()
         return links.map { LinkDTO(it) }
     }
 
     @Transactional(readOnly = true)
-    fun getResume() : ResumeDTO{
+    fun getResume(): ResumeDTO {
         val experiences = presentationRepository.getActiveExperience()
         val achievements = presentationRepository.getActiveAchievements()
         val skills = presentationRepository.getActiveSkills()
@@ -35,7 +35,7 @@ class PresentationService(
     }
 
     @Transactional(readOnly = true)
-    fun getProjects() : List<ProjectDTO> {
+    fun getProjects(): List<ProjectDTO> {
         val projects = presentationRepository.getActiveProjects()
 
         return projects.map { ProjectDTO(it) }

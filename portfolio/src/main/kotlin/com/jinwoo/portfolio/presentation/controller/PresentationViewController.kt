@@ -33,7 +33,8 @@ class PresentationViewController(
 
         val resume = presentationService.getResume()
         model.addAttribute("resume", resume)
-        model.addAttribute("skillType", SkillType.values())
+        model.addAttribute("skillTypes", SkillType.values())
+        //println(resume.skills)
         return "presentation/resume"
     }
 
@@ -45,7 +46,6 @@ class PresentationViewController(
 
         return "presentation/projects"
     }
-
 
 
 }

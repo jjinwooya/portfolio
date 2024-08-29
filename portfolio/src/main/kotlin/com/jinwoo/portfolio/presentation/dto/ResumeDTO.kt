@@ -6,11 +6,11 @@ import com.jinwoo.portfolio.domain.entity.Skill
 import java.time.format.DateTimeFormatter
 
 class ResumeDTO(
-    experiences : List<Experience>,
-    achievements : List<Achievement>,
-    skills : List<Skill>
+    experiences: List<Experience>,
+    achievements: List<Achievement>,
+    skills: List<Skill>
 ) {
-    val experiences : List<ExperienceDTO> = experiences.map {
+    val experiences: List<ExperienceDTO> = experiences.map {
         ExperienceDTO(
             title = it.title,
             description = it.description,
@@ -27,10 +27,10 @@ class ResumeDTO(
             host = it.host,
             achievedDate = it.achievedDate
                 ?.format(DateTimeFormatter.ISO_LOCAL_DATE)
-                ?.replace("-",".")
+                ?.replace("-", ".")
         )
     }
 
-    var skills : List<SkillDTO> = skills.map { SkillDTO(it)}
+    var skills: List<SkillDTO> = skills.map { SkillDTO(it) }
 
 }

@@ -21,6 +21,6 @@ class Skill(
     @Enumerated(value = EnumType.STRING) //enum타입때문
     var type: SkillType = SkillType.valueOf(type)
 
-    var isActive : Boolean = isActive
+    var isActive: Boolean = isActive
 
 }

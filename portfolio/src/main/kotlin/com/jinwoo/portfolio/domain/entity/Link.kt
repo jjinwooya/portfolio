@@ -14,9 +14,9 @@ class Link(
     @Column(name = "link_id")
     var id: Long? = null
 
-    var name : String = name
+    var name: String = name
 
-    var content : String = content
+    var content: String = content
 
     var isActive: Boolean = isActive
 }

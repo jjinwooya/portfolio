@@ -16,7 +16,7 @@ class Project(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "project_id")
     var id: Long? = null
-    var name : String = name
+    var name: String = name
 
     var description: String = description
 
@@ -67,7 +67,7 @@ class Project(
     }
 
     fun addDetails(details: MutableList<ProjectDetail>?) {
-        if(details != null) {
+        if (details != null) {
             this.details.addAll(details)
         }
     }

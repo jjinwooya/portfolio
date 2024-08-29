@@ -17,6 +17,6 @@ class ProjectDTO(
         startYearMonth = "${project.startYear}.${project.startMonth}",
         endYearMonth = project.getEndYearMonth(),
         details = project.details.filter { it.isActive }.map { ProjectDetailDTO(it) },
-        skills = project.skills.map { it.skill }.map {SkillDTO(it)}
+        skills = project.skills.map { it.skill }.map { SkillDTO(it) }
     )
 }

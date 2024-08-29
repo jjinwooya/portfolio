@@ -11,7 +11,7 @@ import java.time.LocalDate
 @Component
 @Profile(value = ["default"])
 class DataInitializer(
-    private val achievementRepository: AchievementRepository ,
+    private val achievementRepository: AchievementRepository,
     private val introductionRepository: IntroductionRepository,
     private val linkRepository: LinkRepository,
     private val skillRepository: SkillRepository,
@@ -24,18 +24,10 @@ class DataInitializer(
         println("스프링실행 테스트 데이터를 초기화")
         val achievements = mutableListOf<Achievement>(
             Achievement(
-                title = "2024년 10월 전에",
-                description = "개발자로 취업",
-                host = "최진우",
-                achievedDate = LocalDate.of(2024, 9, 10),
-                isActive = true
-
-            ),
-            Achievement(
-                title = "취업함",
-                description = "개발자",
-                host = "최진우",
-                achievedDate = LocalDate.of(2024, 9, 10),
+                title = "정보처리기사 필기",
+                description = "필기합격",
+                host = "산업인력공단",
+                achievedDate = LocalDate.of(2024, 3, 14),
                 isActive = true
 
             )
@@ -57,41 +49,30 @@ class DataInitializer(
         linkRepository.saveAll(links)
 
         val experience1 = Experience(
-            title = "대학",
-            description = "전공",
+            title = "부산 아이티윌",
+            description = "국비지원교육",
             startYear = 2024,
-            startMonth = 9,
+            startMonth = 1,
             endYear = 2024,
-            endMonth = 12,
+            endMonth = 7,
             isActive = true
         )
         experience1.addDetails(
             mutableListOf(
-                ExperienceDetail(content = "평점", isActive = true),
-                ExperienceDetail(content = "좀 쩌는 듯", isActive = true)
+                ExperienceDetail(content = "백엔드 개발자 교육", isActive = true)
+               // ExperienceDetail(content = "6개월 국비지원 교육", isActive = true)
             )
         )
 
-        val experience2 = Experience(
-            title = "회사",
-            description = "무직",
-            startYear = 2024,
-            startMonth = 9,
-            endYear = 2024,
-            endMonth = 12,
-            isActive = true
-        )
-        experience2.addDetails(
-            mutableListOf(
-                ExperienceDetail(content = "냥냥펀치", isActive = true),
-                ExperienceDetail(content = "핵펀치", isActive = true)
-            )
-        )
-        experienceRepository.saveAll(mutableListOf(experience1, experience2))
 
-        val java = Skill(name = "JAVA", type = SkillType.LANGUAGE.name, isActive = true)
+        experienceRepository.saveAll(mutableListOf(experience1))
+
+        val java = Skill(name = "Java", type = SkillType.LANGUAGE.name, isActive = true)
         val kotlin = Skill(name = "Kotlin", type = SkillType.LANGUAGE.name, isActive = true)
-        skillRepository.saveAll(mutableListOf(java, kotlin))
+        val spring = Skill(name = "Spring", type = SkillType.FRAMEWORK.name, isActive = true)
+        val mysql = Skill(name = "Mysql", type = SkillType.DATABASE.name, isActive = true)
+        val oracle = Skill(name = "Oracle", type = SkillType.DATABASE.name, isActive = true)
+        skillRepository.saveAll(mutableListOf(java, kotlin,spring,mysql,oracle))
 
         val project1 = Project(
             name = "대학",
