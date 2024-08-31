@@ -8,3 +8,8 @@ abstract class AdminException(
 ) : RuntimeException(message) {
     val httpStatus: HttpStatus = httpStatus
 }
+
+class AdminBadRequestException(message: String) : AdminException(httpStatus = HttpStatus.BAD_REQUEST, message = message)
+
+class AdminInternalException(message: String) :
+    AdminException(httpStatus = HttpStatus.INTERNAL_SERVER_ERROR, message = message)
