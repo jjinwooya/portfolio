@@ -1,13 +1,7 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<div th:replace="~{admin/fragments/head :: head}"></div>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layouts/layouts-head ::layout(~{::main})}">
 <body>
-<div th:replace="~{admin/fragments/header :: header}"></div>
-<!-- ======= Sidebar ======= -->
-
-<div th:replace="~{admin/fragments/sidebar :: sidebar}"></div>
 <main id="main" class="main">
-
     <div class="pagetitle">
         <h1>Data Tables</h1>
         <nav>
@@ -756,13 +750,11 @@
 
             </div>
         </div>
-    </section>s
+    </section>
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
-<div th:replace="~{admin/fragments/footer :: footer}"></div>
-<div th:replace="~{admin/fragments/foot :: foot}"></div>
-<div th:replace="~{admin/fragments/script-util :: util}"></div>
+
 </body>
 
 </html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<div th:replace="~{admin/fragments/head :: head}"></div>
+<body>
+<div th:replace="~{admin/fragments/header :: header}"></div>
+<!-- ======= Sidebar ======= -->
+
+<div th:replace="~{admin/fragments/sidebar :: sidebar}"></div>
+<main th:replace="${content}">
+    <p>content</p>
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<div th:replace="~{admin/fragments/footer :: footer}"></div>
+<div th:replace="~{admin/fragments/foot :: foot}"></div>
+<div th:replace="~{admin/fragments/script-util :: util}"></div>
+</body>
+
+</html>
