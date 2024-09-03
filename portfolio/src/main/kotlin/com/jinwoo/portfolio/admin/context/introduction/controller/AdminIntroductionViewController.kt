@@ -20,6 +20,7 @@ class AdminIntroductionViewController(
             TextFormElementDTO("content", 10),
             SelectFormElementDTO("isActive", 2, listOf(true.toString(), false.toString()))
         )
+        println("Form Elements: $formElements")
         model.addAttribute("formElements", formElements)
 
         val table = adminIntroductionService.getIntroductionTable()

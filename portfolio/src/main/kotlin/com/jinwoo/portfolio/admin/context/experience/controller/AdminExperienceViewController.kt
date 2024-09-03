@@ -15,8 +15,10 @@ class AdminExperienceViewController(
     private val adminExperienceService: AdminExperienceService
 ) {
 
+
     @GetMapping
     fun experience(model: Model): String {
+
         val formElements = listOf<FormElementDTO>(
             TextFormElementDTO("title", 4),
             TextFormElementDTO("description", 8),
@@ -37,6 +39,7 @@ class AdminExperienceViewController(
         val table = adminExperienceService.getExperienceTable()
         model.addAttribute("table", table)
 
+
         val detailTable = adminExperienceService.getExperienceDetailTable(null)
         model.addAttribute("detailTable", detailTable)
 
@@ -45,11 +48,10 @@ class AdminExperienceViewController(
             Pair("pageName", table.name),
             Pair("editable", true),
             Pair("deletable", false),
-            Pair("hasDetails", true)
+            Pair("hasDetails", true),
         )
         model.addAllAttributes(pageAttributes)
+
         return "admin/page-table"
     }
-
-
 }

@@ -9,18 +9,18 @@ abstract class FormElementDTO(
 class TextFormElementDTO(
     name: String,
     size: Int
-) : FormElementDTO(name = name, size = size, type = "Text")
+) : FormElementDTO(name = name, size = size, type = "text")
 
 class DateFormElementDTO(
     name: String,
     size: Int
-) : FormElementDTO(name = name, size = size, type = "Date")
+) : FormElementDTO(name = name, size = size, type = "date")
 
 class SelectFormElementDTO(
     name: String,
     size: Int,
     options: List<Any>
-) : FormElementDTO(name = name, size = size, type = "Select") {
+) : FormElementDTO(name = name, size = size, type = "select") {
     val options: List<Any> = options
 
 }
