@@ -8,6 +8,7 @@
     <th:block th:if="${hasDetails}">
         <div th:replace="~{admin/fragments/dataTable :: datatable(${detailTable})}"></div>
     </th:block>
+    <div th:replace="~{admin/fragments/modal :: modalForm(${formElements})}"></div>
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->

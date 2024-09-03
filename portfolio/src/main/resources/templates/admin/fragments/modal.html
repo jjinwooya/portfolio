@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="modal fade" id="ExtralargeModal" tabindex="-1" th:fragment="modalForm(formElements)"
+     th:id="|${pageName}Modal|">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" th:text="|Edit ${pageName}|">Extra Large Modal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row g-3" th:id="|${#strings.toLowerCase(pageName)}ModalForm|" onsubmit="return false;">
+                    <div th:class="|col-md-2 ${pageName}ModalFormElement|">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="id" placeholder="id" name="id" readonly>
+                            <label for="id"> id </label>
+                        </div>
+                    </div>
+                    <div class="col-md-12" th:each="formElement : ${formElements}"
+                         th:class="|col-md-${formElement.size} ${pageName}ModalFormElement|">
+                        <div th:replace="~{admin/fragments/fragment-form-element :: formElement(${formElement})}"></div>
+                    </div>
+
+                    <th:block th:if="${detailFormElements != null} and ${#lists.size(detailFormElements) > 0}">
+                        <hr>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-outline-primary" onclick="addDetail('modalDetail')">
+                                <i class="bi bi-plus me-1"></i>
+                            </button>
+                        </div>
+                        <div class="row modal detail mt-3">
+                            <div th:class="|col-md-2 ${pageName}ModalDetailFormElement|">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="id2" placeholder="id" name="id"
+                                           readonly>
+                                    <label for="id2"> id </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12" th:each="detailFormElement : ${detailFormElements}"
+                                 th:class="|col-md-${detailFormElement.size} ${pageName}ModalDetailFormElement|">
+                                <div th:replace="~{admin/fragments/fragment-form-element :: formElement(${detailFormElement})}"></div>
+                            </div>
+                        </div>
+                    </th:block>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-primary" th:onclick="completeEdit()">수정</button>
+            </div>
+        </div>
+    </div>
+</div><!-- End Extra Large Modal-->
+
+
+</body>
+</html>
